@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N'ZO Signature | Crochet • Mode • Fait main</title>
+    <meta name="description" content="N'ZO Signature : créations en crochet, mode et fait main à Abidjan. Le fait main, au fil du style.">
+    <meta name="theme-color" content="#1f110a">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Great+Vibes&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="pgstyle.css">
+</head>
+<body>
+    <!-- NAVBAR FIXE -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+               <h1><a href="#accueil"><img src="logo-nzo-cercle.jpg" alt="N'ZO Signature - Logo"></a></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#accueil" class="nav-link">Accueil</a></li>
+                <li><a href="#créations" class="nav-link">Créations</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="cart-button" id="cartButton">
+                <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal du panier -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-content">
+            <div class="cart-modal-header">
+                <h2>Mon Panier</h2>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <p class="empty-cart">Votre panier est vide</p>
+            </div>
+            <div class="cart-modal-footer">
+                <div class="customer-info-form-compact" id="customerInfoForm" style="display: none;">
+                    <h4 style="margin-bottom: 0.8rem; color: #2e1a0f; font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <span>📝</span> Informations de livraison</h4>
+                    <strong> Nom Et Prénom:<br></strong>
+                    <input type="text" id="customerName" class="cart-input-compact" placeholder="N'zo..." required>
+                    <br><strong> Numéro De téléphone:</strong><br>
+                    <input type="tel" id="customerPhone" class="cart-input-compact" placeholder="+225 05...29" maxlength="10" required>
+                </div><br>
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span class="total-price" id="totalPrice">0 FCFA</span>
+                </div>
+                <button class="btn-checkout" id="btnCheckout">Valider la commande</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        <span id="notificationText">Article ajouté au panier !</span>
+    </div>
+
+    <!-- SECTION ACCUEIL -->
+    <section id="accueil" class="section accueil-section">
+        <div class="hero-content">
+            <img class="hero-logo" src="logo-nzo.jpg" alt="N'ZO Signature - Crochet, mode, fait main">
+            <h2 class="hero-title"></h2>
+            <p class="hero-subtitle"></p>
+            <a href="#créations" class="hero-cta">Découvrir nos créations</a>
+        </div>
+        <div class="particles" id="particles"></div>
+    </section>
+
+    <!-- SECTION BOUTIQUE -->
+    <section id="créations" class="section boutique-section">
+        <div class="container">
+            <h2 class="section-title">Nos Créations</h2>
+            
+            <!-- Grille de produits -->
+            <div class="products-grid">
+                <!-- Produit 1 -->
+                <div class="product-card">
+                    <div class="galery">
+                    <div class="product-images">
+                        <img src="IMG2.jpg"  alt="Produit 1">
+                        <img src="IMG3.jpg"  alt="Produit a ">
+                    </div>    
+                    </div>
+                    <div class="product-info">
+                        <h3>Ensemble Chemise + Culotte <span>100% laine</span></h3>
+                        <p class="product-description">Ensemble élégant composé d'une chemise fluide et d'une culotte assortie. Parfait pour un look chic et confortable.</p>
+                        <p class="product-price">25,000 FCFA</p>
+                        <button class="btn-add-cart">Ajouter au panier</button>
+                    </div>
+                </div>
+
+                <!-- Produit 2 -->
+                <div class="product-card">
+                    <div class="galery">
+                    <div class="product-images">
+                        <img src="IMG6.jpg" alt="Produit 2">
+                        <img src="IMG5.jpg"  alt="Produit b">
+                    </div>    
+                    </div>
+                    <div class="product-info">
+                        <h3>Robe En Granny <span>100% laine</span></h3>
+                        <p class="product-description">Magnifique robe au motif Granny colorés. Coupe moderne et flatteuse, idéale pour toutes occasions.</p>
+                        <p class="product-price">16,000 FCFA</p>
+                        <button class="btn-add-cart">Ajouter au panier</button>
+                    </div>
+                </div>
+
+                <!-- Produit 3 -->
+                <div class="product-card">
+                    <div class="galery">
+                    <div class="product-images">
+                        <img src="IMG8.jpg" alt="Produit 3">
+                        <img src="IMG7.jpg"  alt="Produit c">
+                    </div>   
+                    </div>
+                    <div class="product-info">
+                        <h3>Robe Simple <span>100% laine</span></h3>
+                        <p class="product-description">Robe sobre et élégante, parfaite pour un style minimaliste. Tissu léger et confortable, facile à porter en toute saison.</p>
+                        <p class="product-price">14,000 FCFA</p>
+                        <button class="btn-add-cart">Ajouter au panier</button>
+                    </div>
+                </div>
+
+                 <!-- Produit 3 -->
+                <div class="product-card">
+                    <div class="galery">
+                    <div class="product-images">
+                        <img src="IMG19.jpg" alt="Produit 3">
+                        <img src="IMG20.jpg"  alt="Produit c">
+                    </div>   
+                    </div>
+                    <div class="product-info">
+                        <h3>Robe Longue Multicolore<span>100% laine</span></h3>
+                        <p class="product-description">Une magnifique robe longue moulante en crochet avec des bandes horizontales bleu clair, gris, rouge et orange. Fendue sur le côté, fines bretelles, très élégante et colorée, idéale pour les soirées ou looks bohèmes estivaux.</p>
+                        <p class="product-price">20,000 FCFA</p>
+                        <button class="btn-add-cart">Ajouter au panier</button>
+                    </div>
+                </div>
+                <!-- Produit 4 -->
+                <div class="product-card">
+                    <div class="galery">
+                    <div class="product-images">
+                        <img src="IMG12.jpg" alt="Produit 4">
+                        <img src="IMG11.jpg"  alt="Produit d">
+                    </div>    
+                    </div>
+                    <div class="product-info">
+                        <h3>Chemise En Granny <span>100% laine</span></h3>
+                        <p class="product-description">Chemise tendance au motif Granny aux couleurs vives. Design moderne avec des détails soignés, parfaite pour un look décontracté chic.</p>
+                        
+                        <p class="product-price">22,000 FCFA</p>
+                        <button class="btn-add-cart">Ajouter au panier</button>
+                    </div>
+                </div>
+
+                <!-- Produit 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="IMG4.jpg" alt="Produit 5">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ensemble Top + Culotte + Bonnet <span>100% laine</span></h3>
+                        <p class="product-description">Ensemble trois pièces coordonnées comprenant un top ajusté, une culotte confortable et un bonnet assorti. Parfait pour les tout-petits.</p>
+                        <p class="product-price">12,000 FCFA</p>
+                        <button class="btn-add-cart">Ajouter au panier</button>
+                    </div>
+                </div>
+                
+                
+                 <!-- Produit 6 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="IMG18.jpg" alt="Produit 6">
+                    </div>
+                    <div class="product-info">
+                        <h3>Bonnet Violet <span>100% laine</span></h3>
+                        <p class="product-description">Joli bonnet pour bébé en couleur violette douce. Matière délicate et confortable, protège la tête de votre enfant avec style.</p>
+                        
+                        <p class="product-price">3,500 FCFA</p>
+                        <button class="btn-add-cart">Ajouter au panier</button>
+                    </div>
+                </div>
+
+                <!-- Produit 7 -->
+                <div class="product-card">
+                    
+                    <div class="product-image">
+                        <img src="IMG14.jpg" alt="Produit 7">
+                         
+                    </div>
+                    <div class="product-info">
+                        <h3>Bonnet En Granny <span>100% laine</span> </h3>
+                        <p class="product-description">Bonnet bébé confectionné au motif Granny traditionnel. Motifs colorés authentiques, doux et confortable pour les petites têtes.</p>
+                       
+                        <p class="product-price">3,000 FCFA</p>
+                        <button class="btn-add-cart">Ajouter au panier</button>
+                    </div>
+                </div>
+                
+                <!-- Produit 7 -->
+                <div class="product-card">
+                    
+                    <div class="product-image">
+                        <img src="IMG21.jpg" alt="Produit 7">
+                         
+                    </div>
+                    <div class="product-info">
+                        <h3>Brassière Triangle Violet<span>100% laine</span> </h3>
+                        <p class="product-description"> Joli brassière triangle crochetée en violet vif, avec un joli ourlet festonné (volants) en bas et des bordures sombres. Style rétro et féminin, parfait pour l'été.</p>
+                       
+                        <p class="product-price">3,000 FCFA</p>
+                        <button class="btn-add-cart">Ajouter au panier</button>
+                    </div>
+                </div>
+          <!-- Produit 8 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="IMG13.jpg" alt="Produit 8">
+                    </div>
+                    <div class="product-info">
+                        <h3>Chemise Verte <span>100% laine</span></h3>
+                        <p class="product-description">Chemise élégante dans une belle teinte verte fraîche. Coupe moderne et flatteuse, idéale pour un look raffiné et naturel.</p>
+                        
+                        <p class="product-price">15,000 FCFA</p>
+                        <button class="btn-add-cart">Ajouter au panier</button>
+                    </div>
+                </div>      
+                
+        <!-- Produit 9 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="IMG16.jpg" alt="Produit 9">
+                    </div>
+                    <div class="product-info">
+                        <h3>Pantalon Granny<span>100% laine</span></h3>
+                        <p class="product-description">Pantalon confortable motif Granny . Coupe décontractée et moderne, parfait pour un style unique et original.</p>
+                        
+                        <p class="product-price">20,000 FCFA</p>
+                        <button class="btn-add-cart">Ajouter au panier</button>
+                    </div>
+                </div>            
+                
+                <!-- Produit 9 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="IMG17.jpg" alt="Produit 9">
+                    </div>
+                    <div class="product-info">
+                        <h3>Gilet Homme À Carreaux <span>100% laine</span></h3>
+                        <p class="product-description">Un beau gilet sans manches en crochet avec un motif damier classique marron foncé / beige clair. Style moderne et élégant, porté sur une chemise blanche pour un look smart-casual au bureau, très tendance et artisanal.</p>
+                        
+                        <p class="product-price">12,000 FCFA</p>
+                        <button class="btn-add-cart">Ajouter au panier</button>
+                    </div>
+                </div>  
+                       
+                <!-- Produit 10 -->
+                <div class="product-card">
+                    <div class="galery">
+                    <div class="product-images">
+                        <img src="IMG10.jpg" alt="Produit 10">
+                        <img src="IMG9.jpg"  alt="Produit f">
+                    </div>    
+                    </div>
+                    <div class="product-info">
+                        <h3>Ensemble Top Triangle + jupe Motif Granny <span>100% laine</span></h3>
+                        <p class="product-description">Ensemble au crochet motif granny square pour passer un bon weekend à la plage, fait main, aéré (idéal pour la chaleur), audacieux et coloré, souvent porté comme maillot de bain ou cover-up revisité en outfit complet.</p>
+                       
+                        <p class="product-price">12,000 FCFA</p>
+                        <button class="btn-add-cart">Ajouter au panier</button>
+                    </div>
+                </div> 
+                <!-- Produit 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="IMG22.jpg" alt="Produit 5">
+                    </div>
+                    <div class="product-info">
+                        <h3>L'Ensemble Bikini <span>100% laine</span></h3>
+                        <p class="product-description">Un ensemble bikini très original en crochet blanc avec des accents marron : haut style oreilles de lapin et bas taille haute en forme de diamant, le tout décoré de volutes et cordons. Look ludique, coquin et entièrement fait main.</p>
+                        <p class="product-price">12,000 FCFA</p>
+                        <button class="btn-add-cart">Ajouter au panier</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- SECTION CONTACT -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Nos coordonnées</h3>
+                    <p><strong>Adresse:</strong><br>Rue L234 Cocody Angré<br>Abidjan, Côte D'ivoire</p>
+                    <p><strong>Téléphone:</strong><br>+225 0778733567<br>+225 0575389283</p>
+                    <p><strong>Email:</strong><br>EstherGrace@Gmail.com</p>
+                    <p><strong><h4>Suivez-nous: En Cliquant Sur Les Icônes</h4></strong><br>
+                        <div class="icon"><div class="icons">
+                        <ul>                           
+                            <li><a href="https://wa.link/ixdt0r"><ion-icon name="logo-whatsapp"></ion-icon></a></li><br>
+                            <li><a href="https://www.tiktok.com/@estherndri38?_r=1&_t=ZS-94K5tnGuX0a"><ion-icon name="logo-tiktok"></ion-icon></a></li>
+                        </ul>
+                        <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+                        </div></div>
+                    </p>
+                    <p><strong>Horaires:</strong><br>Lun - Ven: 9h - 18h<br>Sam: 10h - 16h</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-top"><img class="footer-logo" src="logo-nzo-cercle.jpg" alt="N'ZO Signature"><h3>N'ZO SIGNATURE</h3></div>
+        <div class="footer-info">
+            <div class="containers"><div class="map-et-lien">
+                <div class="map-section">
+                    <h5>Notre localisation</h5>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.0526852450243!2d-3.9938918249854507!3d5.408946935110836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1949c53579945%3A0xe9e63c075c8fbce7!2s230%20Rue%20les%20Aoussous%2C%20Abidjan!5e0!3m2!1sfr!2sci!4v1768509531184!5m2!1sfr!2sci"
+                        class="map-iframe" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="footer-column">
+                    <h4>Liens rapides</h4>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#créations">Créations</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div></div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Made By Kholore. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- ✅ SCRIPT FIREBASE INTÉGRÉ DIRECTEMENT -->
+    <script type="module">
+        // ========== IMPORT FIREBASE ==========
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+        import { getFirestore, collection, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDRjgXqYuArm4WBOe-mi8ucwbC1kQtUmXE",
+            authDomain: "n-zo-cretaion.firebaseapp.com",
+            projectId: "n-zo-cretaion",
+            storageBucket: "n-zo-cretaion.firebasestorage.app",
+            messagingSenderId: "403603077105",
+            appId: "1:403603077105:web:4f5d2201da81cea0ed7650"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // ========== CONTENU PERSONNALISÉ ==========
+        async function loadCustomContent() {
+            try {
+                const snapshot = await getDocs(collection(db, "siteContent"));
+                const content = snapshot.empty ? {} : snapshot.docs[0].data();
+                const heroTitle = content.heroTitle || "Bienvenue chez N'ZO Signature";
+                document.querySelector('.hero-subtitle').textContent = content.heroSubtitle || '';
+                const titleEl = document.querySelector('.hero-title');
+                let i = 0;
+                function typeWriter() {
+                    if (i < heroTitle.length) { titleEl.textContent += heroTitle.charAt(i++); setTimeout(typeWriter, 100); }
+                }
+                setTimeout(typeWriter, 500);
+                const contactPs = document.querySelectorAll('.contact-info p');
+                if (content.contactAddress && contactPs[0]) contactPs[0].innerHTML = `<strong>Adresse:</strong><br>${content.contactAddress}`;
+                if (content.contactPhone && contactPs[1]) contactPs[1].innerHTML = `<strong>Téléphone:</strong><br>${content.contactPhone}`;
+                if (content.contactEmail && contactPs[2]) contactPs[2].innerHTML = `<strong>Email:</strong><br>${content.contactEmail}`;
+                if (content.primaryColor) document.documentElement.style.setProperty('--primary-color', content.primaryColor);
+                if (content.secondaryColor) document.documentElement.style.setProperty('--secondary-color', content.secondaryColor);
+            } catch (e) {
+                const titleEl = document.querySelector('.hero-title');
+                const heroTitle = "Bienvenue chez N'ZO Signature";
+                let i = 0;
+                function typeWriter() { if (i < heroTitle.length) { titleEl.textContent += heroTitle.charAt(i++); setTimeout(typeWriter, 100); } }
+                setTimeout(typeWriter, 500);
+            }
+        }
+
+        
+
+        // ========== PANIER ==========
+        let cart = [];
+
+        function showNotification(msg, type = 'success') {
+            const n = document.getElementById('notification');
+            document.getElementById('notificationText').textContent = msg;
+            n.className = 'notification ' + type;
+            n.classList.add('show');
+            setTimeout(() => n.classList.remove('show'), 3000);
+        }
+
+        document.getElementById('cartButton').addEventListener('click', () => document.getElementById('cartModal').classList.add('active'));
+        document.getElementById('closeModal').addEventListener('click', () => document.getElementById('cartModal').classList.remove('active'));
+        document.getElementById('cartModal').addEventListener('click', e => { if (e.target === document.getElementById('cartModal')) document.getElementById('cartModal').classList.remove('active'); });
+
+        function addToCart(name, price) {
+            const existing = cart.find(i => i.name === name);
+            if (existing) existing.quantity++;
+            else cart.push({ name, price, quantity: 1 });
+            updateCart();
+            localStorage.setItem('cart', JSON.stringify(cart));
+            showNotification(`${name} ajouté au panier !`);
+            createConfetti();
+        }
+
+        function createConfetti() {
+            const colors = ['#c9a253','#e8cb85','#a8801f','#5a3820','#faf0e1'];
+            for (let i = 0; i < 15; i++) {
+                const c = document.createElement('div');
+                c.className = 'confetti';
+                c.style.left = Math.random() * 100 + 'vw';
+                c.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                c.style.animationDelay = Math.random() * 0.3 + 's';
+                document.body.appendChild(c);
+                setTimeout(() => c.remove(), 3000);
+            }
+        }
+
+        function updateCart() {
+            const totalQty = cart.reduce((s, i) => s + i.quantity, 0);
+            document.getElementById('cartCount').textContent = totalQty;
+            const formEl = document.getElementById('customerInfoForm');
+            const itemsEl = document.getElementById('cartItems');
+            if (cart.length === 0) {
+                itemsEl.innerHTML = '<p class="empty-cart">Votre panier est vide</p>';
+                if (formEl) formEl.style.display = 'none';
+            } else {
+                itemsEl.innerHTML = cart.map((item, idx) => `
+                    <div class="cart-item">
+                        <div class="cart-item-info"><h4>${item.name}</h4><p>${Number(item.price).toLocaleString('fr-FR')} FCFA</p></div>
+                        <div class="cart-item-controls">
+                            <button onclick="window.decreaseQuantity(${idx})">-</button>
+                            <span>${item.quantity}</span>
+                            <button onclick="window.increaseQuantity(${idx})">+</button>
+                            <button class="remove-btn" onclick="window.removeFromCart(${idx})">🗑️</button>
+                        </div>
+                    </div>`).join('');
+                if (formEl) formEl.style.display = 'block';
+            }
+            document.getElementById('totalPrice').textContent = cart.reduce((s, i) => s + i.price * i.quantity, 0).toLocaleString('fr-FR') + ' FCFA';
+        }
+
+        window.increaseQuantity = idx => { cart[idx].quantity++; updateCart(); localStorage.setItem('cart', JSON.stringify(cart)); };
+        window.decreaseQuantity = idx => {
+            if (cart[idx].quantity > 1) cart[idx].quantity--; else cart.splice(idx, 1);
+            updateCart(); localStorage.setItem('cart', JSON.stringify(cart));
+        };
+        window.removeFromCart = idx => {
+            const name = cart[idx].name; cart.splice(idx, 1);
+            updateCart(); localStorage.setItem('cart', JSON.stringify(cart));
+            showNotification(`${name} retiré du panier`, 'info');
+        };
+
+        // ========== VALIDATION COMMANDE → FIREBASE ==========
+        document.getElementById('btnCheckout').addEventListener('click', async () => {
+            if (cart.length === 0) { showNotification('Votre panier est vide !', 'error'); return; }
+            const name = document.getElementById('customerName')?.value?.trim() || '';
+            
+            const phone = document.getElementById('customerPhone')?.value?.trim() || '';
+            if (!name || !phone) {
+                showNotification('Veuillez remplir tous les champs', 'error');
+                if (!name) document.getElementById('customerName').style.borderColor = 'red';
+                
+                if (!phone) document.getElementById('customerPhone').style.borderColor = 'red';
+                return;
+            }
+            
+            const order = {
+                id: 'CMD-' + Date.now(),
+                date: new Date().toISOString(),
+                items: [...cart],
+                total: cart.reduce((s, i) => s + i.price * i.quantity, 0),
+                status: 'en attente',
+                customerInfo: { name, phone, orderDate: new Date().toLocaleString('fr-FR') }
+            };
+            try {
+                await addDoc(collection(db, "orders"), order);
+                createConfetti();
+                document.body.insertAdjacentHTML('beforeend', `
+                    <div id="orderSummary" style="position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:2999;display:flex;align-items:center;justify-content:center;">
+                        <div style="background:#fffaf2;padding:2rem;border-radius:20px;border:1px solid #c9a253;max-width:500px;width:90%;box-shadow:0 10px 40px rgba(0,0,0,0.4);">
+                            <h2 style="color:#a8801f;font-family:Cormorant Garamond,Georgia,serif;font-size:2rem;text-align:center;margin-bottom:1.2rem;">✓ Commande validée !</h2>
+                            <div style="background:#faf0e1;padding:1.2rem;border-radius:10px;margin-bottom:1rem;">
+                                <p><strong>N° commande :</strong> ${order.id}</p>
+                                <p><strong>Total :</strong> <span style="color:#a8801f;font-size:1.4rem;font-weight:bold;">${order.total.toLocaleString('fr-FR')} FCFA</span></p>
+                            </div>
+                            <div style="background:#f4e3c8;padding:1.2rem;border-radius:10px;margin-bottom:1.5rem;">
+                                <p style="margin:0;color:#2e1a0f;">📦 Votre commande a été envoyée à N'ZO Création !</p>
+                            </div>
+                            <button onclick="document.getElementById('orderSummary').remove()" style="width:100%;padding:1rem;background:#2e1a0f;color:#e8cb85;border:1px solid #c9a253;border-radius:50px;font-weight:bold;cursor:pointer;">OK, compris !</button>
+                        </div>
+                    </div>`);
+                cart = []; updateCart(); localStorage.setItem('cart', '[]');
+                ['customerName','customerPhone'].forEach(id => { const el = document.getElementById(id); if (el) { el.value=''; el.style.borderColor=''; } });
+                setTimeout(() => document.getElementById('cartModal').classList.remove('active'), 600);
+            } catch (e) {
+                console.error('Erreur commande:', e);
+                showNotification('Erreur lors de la commande. Réessayez.', 'error');
+            }
+        });
+
+        function attachCartEvents() {
+            document.querySelectorAll('.btn-add-cart').forEach(btn => {
+                btn.addEventListener('click', e => {
+                    const card = e.target.closest('.product-card');
+                    const name = card.querySelector('h3').textContent;
+                    const price = parseFloat(card.querySelector('.product-price').textContent.replace(/[^0-9]/g, ''));
+                    addToCart(name, price);
+                    btn.classList.add('added');
+                    const txt = btn.textContent;
+                    btn.innerHTML = '<span>✓</span> Ajouté !';
+                    setTimeout(() => { btn.classList.remove('added'); btn.textContent = txt; }, 1500);
+                });
+            });
+        }
+
+        // ========== PARTICULES ==========
+        function createParticles() {
+            const container = document.getElementById('particles');
+            if (!container) return;
+            for (let i = 0; i < 30; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.animationDelay = Math.random() * 5 + 's';
+                p.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                container.appendChild(p);
+            }
+        }
+
+        // ========== SCROLL PARALLAX ==========
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    const scrolled = window.pageYOffset;
+                    const hero = document.querySelector('.hero-content');
+                    if (hero && scrolled < window.innerHeight) {
+                        hero.style.transform = `translateY(${scrolled * 0.25}px)`;
+                        hero.style.opacity = Math.max(0, 1 - scrolled / (window.innerHeight * 0.9));
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // ========== INIT ==========
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadCustomContent();
+            
+            const saved = localStorage.getItem('cart');
+            if (saved) { cart = JSON.parse(saved); updateCart(); }
+            createParticles();
+            attachCartEvents();
+            ['customerName','customerEmail','customerPhone'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.addEventListener('input', () => el.style.borderColor = '');
+            });
+        });
+    </script>
+</body>
+</html>
